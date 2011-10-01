@@ -1,0 +1,14 @@
+checkout this project, feel free to make branches, commits, whatever.
+push them willy nilly.
+here's some git documentation:
+
+starts off with most common git operations and gets more and more in depth
+http://book.git-scm.com/3_getting_a_git_repository.html
+
+in depth guide to most aspects of git (i haven't read all of it)
+http://progit.org/book/
+
+this describes the motivation for different aspects of git in a really
+accessible way
+http://tom.preston-werner.com/2009/05/19/the-git-parable.html
+

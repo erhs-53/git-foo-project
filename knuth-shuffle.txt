@@ -1,0 +1,55 @@
+c++:
+#include <cstdlib>
+#include <algorithm>
+#include <iterator>
+ 
+template<typename RandomAccessIterator>
+void knuthShuffle(RandomAccessIterator begin, RandomAccessIterator end) {
+  for(unsigned int n = end - begin - 1; n >= 1; --n) {
+    unsigned int k = rand() % (n + 1);
+    if(k != n) {
+      std::iter_swap(begin + k, begin + n);
+    }
+  }
+}
+
+java:
+import java.util.Random;
+ 
+public static final Random gen = new Random();
+ 
+// version for array of ints
+public static void shuffle (int[] array) {
+    int n = array.length;
+    while (n > 1) {
+        int k = gen.nextInt(n--); //decrements after using the value
+        int temp = array[n];
+        array[n] = array[k];
+        array[k] = temp;
+    }
+}
+// version for array of references
+public static void shuffle (Object[] array) {
+    int n = array.length;
+    while (n > 1) {
+        int k = gen.nextInt(n--); //decrements after using the value
+        Object temp = array[n];
+        array[n] = array[k];
+        array[k] = temp;
+    }
+}
+
+labview:
+see Knuth_shuffle_LabView_diagram.png
+
+python:
+from random import randrange
+ 
+def knuth_shuffle(x):
+    for i in range(len(x)-1, 0, -1):
+        j = randrange(i + 1)
+        x[i], x[j] = x[j], x[i]
+ 
+x = list(range(10))
+knuth_shuffle(x)
+print("shuffled:", x)
